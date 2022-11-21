@@ -5,4 +5,6 @@
     <string name="second">SECOND VALUE</string>
     <string name="third">THIRD VALUE</string>
     <string name="total">RESULT</string>
+    <string name="txt_compute_result">Result(s)</string>
+    <string name="txt_close">Close</string>
 </resources>

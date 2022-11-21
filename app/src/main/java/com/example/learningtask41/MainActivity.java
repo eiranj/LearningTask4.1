@@ -11,8 +11,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     EditText firstvalue,secondvalue,thirdvalue;
     Button btnadd,btnsubtract,btnmultiply,btndivide;
-    double num1,num2,num3;
+    double num1,num2,num3, result;
     TextView showresult;
+    String resultMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         btnsubtract=findViewById(R.id.btnsubtract);
         btnmultiply=findViewById(R.id.btnmultiply);
         btndivide=findViewById(R.id.btndivide);
-        showresult=findViewById(R.id.showresult);
         ClickListener();
 
 
@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1=Double.parseDouble(firstvalue.getText().toString());
-                num2=Double.parseDouble(secondvalue.getText().toString());
-                num3=Double.parseDouble(thirdvalue.getText().toString());
-                Double result=num1+num2+num3;
                 firstvalue = (EditText) findViewById(R.id.firstvalue);
                 secondvalue = (EditText) findViewById(R.id.secondvalue);
                 thirdvalue = (EditText) findViewById(R.id.thirdvalue);
@@ -52,7 +48,21 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 result = num1+num2+num3;
-                showresult.setText(String.valueOf(result));
+
+                resultMessage =  "The result is " + result;
+
+                // Create Bundle instance, this will allow transfer of data from Activity to DialogFragment
+                Bundle args = new Bundle();
+                args.putString("result", resultMessage);
+
+                // Create a dialog instance
+                DialogueFragmentCustom dialogFragmentImp = new DialogueFragmentCustom();
+                // Pass on dialog argument(args), the result
+                dialogFragmentImp.setArguments(args);
+                // Display the Dialog
+                dialogFragmentImp.show(getSupportFragmentManager(),"Display Result");
+                // Reset EditTexts
+                clearEditText();
 
 
             }
@@ -60,11 +70,6 @@ public class MainActivity extends AppCompatActivity {
         btnsubtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1=Double.parseDouble(firstvalue.getText().toString());
-                num2=Double.parseDouble(secondvalue.getText().toString());
-                num3=Double.parseDouble(thirdvalue.getText().toString());
-                Double result=num1-num2-num3;
-
                 firstvalue = (EditText) findViewById(R.id.firstvalue);
                 secondvalue = (EditText) findViewById(R.id.secondvalue);
                 thirdvalue = (EditText) findViewById(R.id.thirdvalue);
@@ -79,16 +84,25 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 result = num1-num2-num3;
-                showresult.setText(String.valueOf(result));
+                resultMessage =  "The result is " + result;
+
+                // Create Bundle instance, this will allow transfer of data from Activity to DialogFragment
+                Bundle args = new Bundle();
+                args.putString("result", resultMessage);
+
+                // Create a dialog instance
+                DialogueFragmentCustom dialogFragmentImp = new DialogueFragmentCustom();
+                // Pass on dialog argument(args), the result
+                dialogFragmentImp.setArguments(args);
+                // Display the Dialog
+                dialogFragmentImp.show(getSupportFragmentManager(),"Display Result");
+                // Reset EditTexts
+                clearEditText();
             }
         });
         btnmultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1=Double.parseDouble(firstvalue.getText().toString());
-                num2=Double.parseDouble(secondvalue.getText().toString());
-                num3=Double.parseDouble(thirdvalue.getText().toString());
-                Double result=num1*num2*num3;
                 firstvalue = (EditText) findViewById(R.id.firstvalue);
                 secondvalue = (EditText) findViewById(R.id.secondvalue);
                 thirdvalue = (EditText) findViewById(R.id.thirdvalue);
@@ -104,16 +118,25 @@ public class MainActivity extends AppCompatActivity {
 
                 result = num1*num2*num3;
 
-                showresult.setText(String.valueOf(result));
+                resultMessage =  "The result is " + result;
+
+                // Create Bundle instance, this will allow transfer of data from Activity to DialogFragment
+                Bundle args = new Bundle();
+                args.putString("result", resultMessage);
+
+                // Create a dialog instance
+                DialogueFragmentCustom dialogFragmentImp = new DialogueFragmentCustom();
+                // Pass on dialog argument(args), the result
+                dialogFragmentImp.setArguments(args);
+                // Display the Dialog
+                dialogFragmentImp.show(getSupportFragmentManager(),"Display Result");
+                // Reset EditTexts
+                clearEditText();
             }
         });
         btndivide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1=Double.parseDouble(firstvalue.getText().toString());
-                num2=Double.parseDouble(secondvalue.getText().toString());
-                num3=Double.parseDouble(thirdvalue.getText().toString());
-                Double result=num1/num2/num3;
                 firstvalue = (EditText) findViewById(R.id.firstvalue);
                 secondvalue = (EditText) findViewById(R.id.secondvalue);
                 thirdvalue = (EditText) findViewById(R.id.thirdvalue);
@@ -128,8 +151,27 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 result = num1/num2/num3;
-                showresult.setText(String.valueOf(result));
+                resultMessage =  "The result is " + result;
+
+                // Create Bundle instance, this will allow transfer of data from Activity to DialogFragment
+                Bundle args = new Bundle();
+                args.putString("result", resultMessage);
+
+                // Create a dialog instance
+                DialogueFragmentCustom dialogFragmentImp = new DialogueFragmentCustom();
+                // Pass on dialog argument(args), the result
+                dialogFragmentImp.setArguments(args);
+                // Display the Dialog
+                dialogFragmentImp.show(getSupportFragmentManager(),"Display Result");
+                // Reset EditTexts
+                clearEditText();
             }
         });
+
+    }
+    public void clearEditText(){
+        firstvalue.getText().clear();
+        secondvalue.getText().clear();
+        thirdvalue.getText().clear();
     }
 }
