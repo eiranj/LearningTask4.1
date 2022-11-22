@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">LearningTask4.1</string>
-    <string name="app">CALCULATOR</string>
+    <string name="app">MATH PROBLEM SOLVER</string>
     <string name="first">FIRST VALUE</string>
     <string name="second">SECOND VALUE</string>
     <string name="third">THIRD VALUE</string>
