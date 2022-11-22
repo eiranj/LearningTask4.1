@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     EditText firstvalue,secondvalue,thirdvalue;
     Button btnadd,btnsubtract,btnmultiply,btndivide;
     double num1,num2,num3, result;
-    TextView showresult;
     String resultMessage;
 
     @Override
@@ -34,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firstvalue = (EditText) findViewById(R.id.firstvalue);
-                secondvalue = (EditText) findViewById(R.id.secondvalue);
-                thirdvalue = (EditText) findViewById(R.id.thirdvalue);
+                firstvalue = findViewById(R.id.firstvalue);
+                secondvalue = findViewById(R.id.secondvalue);
+                thirdvalue = findViewById(R.id.thirdvalue);
                 if(firstvalue.getText().toString().isEmpty() ||  secondvalue.getText().toString().isEmpty() ||  thirdvalue.getText().toString().isEmpty()){
                     num1 = 0;
                     num2 = 0;
@@ -70,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         btnsubtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firstvalue = (EditText) findViewById(R.id.firstvalue);
-                secondvalue = (EditText) findViewById(R.id.secondvalue);
-                thirdvalue = (EditText) findViewById(R.id.thirdvalue);
+                firstvalue = findViewById(R.id.firstvalue);
+                secondvalue = findViewById(R.id.secondvalue);
+                thirdvalue = findViewById(R.id.thirdvalue);
                 if(firstvalue.getText().toString().isEmpty() ||  secondvalue.getText().toString().isEmpty() ||  thirdvalue.getText().toString().isEmpty()){
                     num1 = 0;
                     num2 = 0;
@@ -103,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
         btnmultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firstvalue = (EditText) findViewById(R.id.firstvalue);
-                secondvalue = (EditText) findViewById(R.id.secondvalue);
-                thirdvalue = (EditText) findViewById(R.id.thirdvalue);
+                firstvalue = findViewById(R.id.firstvalue);
+                secondvalue = findViewById(R.id.secondvalue);
+                thirdvalue =  findViewById(R.id.thirdvalue);
                 if(firstvalue.getText().toString().isEmpty() ||  secondvalue.getText().toString().isEmpty() ||  thirdvalue.getText().toString().isEmpty()){
                     num1 = 0;
                     num2 = 0;
@@ -137,9 +136,9 @@ public class MainActivity extends AppCompatActivity {
         btndivide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firstvalue = (EditText) findViewById(R.id.firstvalue);
-                secondvalue = (EditText) findViewById(R.id.secondvalue);
-                thirdvalue = (EditText) findViewById(R.id.thirdvalue);
+                firstvalue =  findViewById(R.id.firstvalue);
+                secondvalue = findViewById(R.id.secondvalue);
+                thirdvalue =  findViewById(R.id.thirdvalue);
                 if(firstvalue.getText().toString().isEmpty() ||  secondvalue.getText().toString().isEmpty() ||  thirdvalue.getText().toString().isEmpty()){
                     num1 = 0;
                     num2 = 0;
